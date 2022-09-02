@@ -1,6 +1,6 @@
 import React from 'react';
-import TimeAgo from 'javascript-time-ago';
-import en from 'javascript-time-ago/locale/en';
+// import TimeAgo from 'javascript-time-ago';
+// import en from 'javascript-time-ago/locale/en';
 
 
 
@@ -9,8 +9,8 @@ const VideoDetail = ({ video} ) => {
         return <div>Loading...</div>;
     }
 
-    TimeAgo.locale(en);
-    const timeAgo = new TimeAgo('en-US');
+    // TimeAgo.locale(en);
+    // const timeAgo = new TimeAgo('en-US');
 
     const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
     // const publishTime = `${timeAgo.format(new Date(video.snippet.publishedAt))}`;
@@ -18,7 +18,7 @@ const VideoDetail = ({ video} ) => {
     // console.log(new Date(video.snippet.publishedAt).toLocaleDateString('en-US', { timezone: 'UTC' }));
 
     const publishTime = video.snippet.publishedAt;
-    console.log("New time ",publishTime);
+    // console.log("New time ",publishTime);
     const timestamp = new Date(publishTime).getTime();
     const Day = new Date(publishTime).getDate();
     // const Month = new Date(publishTime).getMonth()+1;

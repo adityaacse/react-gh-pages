@@ -3,6 +3,7 @@ import SearchBar  from './SearchBar';
 import youtube from '../apis/youtube';
 import VideoList from './VideoList';
 import VideoDetail from './VideoDetail';
+import vidicon from '../images/tube_icon.webp';
 
 class App extends React.Component {
     state = { videos: [], selectedVideo: null };
@@ -27,9 +28,19 @@ class App extends React.Component {
 
     render() {
         return (
-            <div className='ui container'>
-                <SearchBar onFormSubmit={this.onTermSubmit} />
+            <div className='ui container'>                
                 <div className='ui grid'>
+                    <div className='ui row'>
+                        <div 
+                        className='four wide column' 
+                        style={{ alignItems: "center", justifyContent: "center", display: "flex" }}>
+                            <img alt='icon' src={vidicon} style={{ width: '80px', height:'60px', marginTop:'20px' }} />
+                            <h1>VideoTube</h1>
+                        </div>
+                        <div className='twelve wide column'>
+                        <SearchBar onFormSubmit={this.onTermSubmit} />
+                        </div>
+                    </div>
                     <div className='ui row'>
                         <div className='eleven wide column'>
                             <VideoDetail video={this.state.selectedVideo} />
